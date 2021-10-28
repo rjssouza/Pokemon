@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Configurations>Debug;Release;Production</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;NU1701;</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;NU1701;</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Production|AnyCPU'">
+    <NoWarn>1701;1702;NU1701;</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.2.0" />
+    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.0" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Factory\Module.Factory.Interface\Module.Factory.Interface.csproj" />
+    <ProjectReference Include="..\..\Factory\Module.Factory\Module.Factory.csproj" />
+    <ProjectReference Include="..\..\Integration\Module.Integration.Interface\Module.Integration.Interface.csproj" />
+    <ProjectReference Include="..\..\Integration\Module.Integration\Module.Integration.csproj" />
+    <ProjectReference Include="..\..\Repository\Module.Repository\Module.Repository.csproj" />
+    <ProjectReference Include="..\..\ServiceValidation\Module.Service.Validation\Module.Service.Validation.csproj" />
+    <ProjectReference Include="..\..\Service\Module.Service\Module.Service.csproj" />
+    <ProjectReference Include="..\..\Utilidade\Module.Util\Module.Util.csproj" />
+    <ProjectReference Include="..\Module.IoC.Interface\Module.IoC.Interface.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Mapper\Configuracoes\" />
+  </ItemGroup>
+
+</Project>

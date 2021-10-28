@@ -1,0 +1,307 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Module.Dto</name>
+    </assembly>
+    <members>
+        <member name="T:Module.Dto.Base.BaseDto">
+            <summary>
+            Classe base para data transfer object
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Base.BaseDto.Id">
+            <summary>
+            Identificador da entidade
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Base.DescriptionBaseDto">
+            <summary>
+            Base objetos com nome e descrição
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Base.DescriptionBaseDto.Description">
+            <summary>
+            Descrição
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Base.FilterBaseDto">
+            <summary>
+            Classe base para filtros
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Base.FilterBaseDto.Id">
+            <summary>
+            Identificador da entidade
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Base.FilterBaseDto.Keyword">
+            <summary>
+            Chave De texto para consulta geral, varia de acordo com a entidade em questão
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Base.FilterBaseDto.LimitMax">
+            <summary>
+            Quantidade de itens por página
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Base.FilterBaseDto.LimitMustBeUsed">
+            <summary>
+            Define se os limites devem ser utilizados ou não
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Base.FilterBaseDto.LimitStart">
+            <summary>
+            Pagina inicial
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Base.BaseGenericSelectDto`1">
+            <summary>
+            Classe abstrata para objetos de seleção combo, listview etc.
+            </summary>
+            <typeparam name="T">Tipo genérico do valor</typeparam>
+        </member>
+        <member name="P:Module.Dto.Base.BaseGenericSelectDto`1.Text">
+            <summary>
+            Texto para ser exibido na caixa de seleção
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Base.BaseGenericSelectDto`1.Value">
+            <summary>
+            Valor da entidade na seleção
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Base.GenericIntSelectDto">
+            <summary>
+            Classe para objetos de seleção combo com identificador do tipo inteiro
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Base.GenericGuidSelectDto">
+            <summary>
+            Classe abstrata para de seleção combo com identificador do tipo guid
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Base.NameBaseDto">
+            <summary>
+            Base para classes que possuem nome
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Base.NameBaseDto.Name">
+            <summary>
+            Nome
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Config.DbSettingsDto">
+            <summary>
+            Conexões de banco de dados
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Config.DbSettingsDto.Default">
+            <summary>
+            String de conexão padrão
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Config.ExternalApiSettingsDto">
+            <summary>
+            Endereços de api de integração externa
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Config.ExternalApiSettingsDto.ViaCepApiUrl">
+            <summary>
+            Endereço de api dos serviços de via cep https://viacep.com.br/
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Config.SettingsDto">
+            <summary>
+            Objeto de configurações do sistema (acessado por todas as camadas)
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Config.SettingsDto.DbConnection">
+            <summary>
+            Conexões com banco de dados
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Config.SettingsDto.ApiServicesUrl">
+            <summary>
+            Endereços de api de integração externa
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Validation.Api.ApiException">
+            <summary>
+            Exceção api
+            </summary>
+        </member>
+        <member name="M:Module.Dto.Validation.Api.ApiException.#ctor(System.Net.HttpStatusCode,System.String,System.Exception)">
+            <summary>
+            Construtor da classe de exceção da api
+            </summary>
+            <param name="statusCode">Codigo http</param>
+            <param name="message">Mensagem</param>
+            <param name="ex">Exceção</param>
+        </member>
+        <member name="M:Module.Dto.Validation.Api.ApiException.#ctor(System.Net.HttpStatusCode,System.String)">
+            <summary>
+            Construtor da classe de exceção da api
+            </summary>
+            <param name="statusCode">Codigo http</param>
+            <param name="message">Mensagem</param>
+        </member>
+        <member name="M:Module.Dto.Validation.Api.ApiException.#ctor(System.Net.HttpStatusCode)">
+            <summary>
+            Construtor da classe de exceção da api
+            </summary>
+            <param name="statusCode">Codigo http</param>
+        </member>
+        <member name="P:Module.Dto.Validation.Api.ApiException.StatusCode">
+            <summary>
+            Código http da exceção
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Validation.Api.ConfirmationException">
+            <summary>
+            Exceção disparada quando necessário a confirmação de um usuário 
+            </summary>
+        </member>
+        <member name="M:Module.Dto.Validation.Api.ConfirmationException.#ctor">
+            <summary>
+            Construtor da confirmação de usuário
+            </summary>
+        </member>
+        <member name="M:Module.Dto.Validation.Api.ConfirmationException.#ctor(System.String)">
+            <summary>
+            Construtor da convirmação de usuário
+            </summary>
+            <param name="message">Mensagem de erro</param>
+        </member>
+        <member name="P:Module.Dto.Validation.Api.ConfirmationException.Message">
+            <summary>
+            Mensagem da exceção
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Validation.Api.DeniedAcessException">
+            <summary>
+            Exceção de acesso negado
+            </summary>
+        </member>
+        <member name="M:Module.Dto.Validation.Api.DeniedAcessException.#ctor">
+            <summary>
+            Construtor 
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Validation.Api.ValidationException">
+            <summary>
+            Exceção disparada após validação de regras de negócio
+            </summary>
+        </member>
+        <member name="M:Module.Dto.Validation.Api.ValidationException.#ctor">
+            <summary>
+            Construtor exceção de validação
+            </summary>
+        </member>
+        <member name="M:Module.Dto.Validation.Api.ValidationException.#ctor(Module.Dto.Validation.ValidationSummary)">
+            <summary>
+            Construtor exceção de validação
+            </summary>
+            <param name="validation">Sumário de validação</param>
+        </member>
+        <member name="M:Module.Dto.Validation.Api.ValidationException.#ctor(System.String,System.String)">
+            <summary>
+            Construtor exceção de validação
+            </summary>
+            <param name="subject">Assunto da validação</param>
+            <param name="message">Mensagem da validação</param>
+        </member>
+        <member name="P:Module.Dto.Validation.Api.ValidationException.Validation">
+            <summary>
+            Sumário da validação
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Validation.ValidationError">
+            <summary>
+            Objeto que representa o erro de validação
+            </summary>
+        </member>
+        <member name="M:Module.Dto.Validation.ValidationError.#ctor(System.String,System.String)">
+            <summary>
+            Construtor do erro de validação
+            </summary>
+            <param name="subject">Assunto</param>
+            <param name="message">Mensagem de erro</param>
+        </member>
+        <member name="M:Module.Dto.Validation.ValidationError.#ctor(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Construtor do erro de validação
+            </summary>
+            <param name="subject">Assunto</param>
+            <param name="messages">Lista de mensagens</param>
+        </member>
+        <member name="P:Module.Dto.Validation.ValidationError.ContainsErrors">
+            <summary>
+            Flag que indica contém erro
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Validation.ValidationError.Errors">
+            <summary>
+            Lista de erros
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Validation.ValidationError.Subject">
+            <summary>
+            Assunto da validação
+            </summary>
+        </member>
+        <member name="M:Module.Dto.Validation.ValidationError.GetErrorMessage(System.String,System.String)">
+            <summary>
+            Obtém a mensagens de erro
+            </summary>
+            <param name="errorIndicator">Caractere que indica a pontuação do erro</param>
+            <param name="errorSeparator">Separador </param>
+            <returns>Mensagem formatada</returns>
+        </member>
+        <member name="T:Module.Dto.Validation.ValidationSummary">
+            <summary>
+            Sumário de validação
+            </summary>
+        </member>
+        <member name="M:Module.Dto.Validation.ValidationSummary.#ctor">
+            <summary>
+            Construtor padrão sumário de validação
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Validation.ValidationSummary.ContainsErrors">
+            <summary>
+            Flag que indica se sumário possui erros
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Validation.ValidationSummary.ErrorMessage">
+            <summary>
+            Mensagem de erro da validação formatada
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Validation.ValidationSummary.Errors">
+            <summary>
+            Dicionário de erros
+            </summary>
+        </member>
+        <member name="M:Module.Dto.Validation.ValidationSummary.AddError(System.String,System.String)">
+            <summary>
+            Método que adiciona erro ao sumário
+            </summary>
+            <param name="subject">Tema do erro</param>
+            <param name="message">Mensagem de erro</param>
+        </member>
+        <member name="M:Module.Dto.Validation.ValidationSummary.AddValidationError(Module.Dto.Validation.ValidationError)">
+            <summary>
+            Método que adiciona um objeto de validação ao dicionário
+            </summary>
+            <param name="validationError">Objeto que representa o erro de validação</param>
+        </member>
+        <member name="M:Module.Dto.Validation.ValidationSummary.GetErrorMessage(System.String,System.String)">
+            <summary>
+            Obtém a mensagens de erro
+            </summary>
+            <param name="errorIndicator">Caractere que indica a pontuação do erro</param>
+            <param name="errorSeparator">Separador </param>
+            <returns>Mensagem formatada</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Configurations>Debug;Release;Production</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;NU1701;</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;NU1701;</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Production|AnyCPU'">
+    <NoWarn>1701;1702;NU1701;</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dto\Module.Dto\Module.Dto.csproj" />
+    <ProjectReference Include="..\..\Factory\Module.Factory.Interface\Module.Factory.Interface.csproj" />
+    <ProjectReference Include="..\..\Integration\Module.Integration.Interface\Module.Integration.Interface.csproj" />
+    <ProjectReference Include="..\..\Repository\Module.Repository.Interface\Module.Repository.Interface.csproj" />
+    <ProjectReference Include="..\..\Repository\Module.Repository.Model\Module.Repository.Model.csproj" />
+    <ProjectReference Include="..\..\ServiceValidation\Module.Service.Validation.Interface\Module.Service.Validation.Interface.csproj" />
+    <ProjectReference Include="..\..\Utilidade\Module.Util\Module.Util.csproj" />
+    <ProjectReference Include="..\Module.Service.Interface\Module.Service.Interface.csproj" />
+  </ItemGroup>
+
+</Project>

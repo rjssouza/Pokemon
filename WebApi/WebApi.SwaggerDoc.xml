@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:WebApi.Base.ServiceController">
+            <summary>
+            Classe base para Controller
+            </summary>
+        </member>
+        <member name="P:WebApi.Base.ServiceController.Settings">
+            <summary>
+            Objeto de configurações (registrado no início da aplicação)
+            </summary>
+        </member>
+        <member name="T:WebApi.Controller.ValuesController">
+            <summary>
+            Controller de teste de template 
+            </summary>
+        </member>
+        <member name="M:WebApi.Controller.ValuesController.Get">
+            <summary>
+            Obter informação de saúde da api
+            </summary>
+            <returns>Mensagem indicando o status da api</returns>
+        </member>
+        <member name="T:WebApi.Filter.ExceptionFilter">
+            <summary>
+            Filtro de exceção
+            </summary>
+        </member>
+        <member name="M:WebApi.Filter.ExceptionFilter.#ctor(Module.Util.Log.Logger)">
+            <summary>
+            Construtor de exceção utilizando logger registrado no modulo ioc
+            </summary>
+            <param name="customLogger">Logger</param>
+        </member>
+        <member name="M:WebApi.Filter.ExceptionFilter.ObterCodigoHttp(System.Exception)">
+            <summary>
+            Obtem código http da exceção de acordo com o tipo retornado da exceção
+            </summary>
+            <param name="excecao">Exceção</param>
+            <returns>Http Status Code</returns>
+        </member>
+        <member name="M:WebApi.Filter.ExceptionFilter.ObterMensagem(System.Exception)">
+            <summary>
+            Obtém mensagem da exeção da mensagem de forma legível na resposta http
+            </summary>
+            <param name="excecao">Eceção retornada</param>
+            <returns>Texto da mensagem</returns>
+        </member>
+        <member name="M:WebApi.Filter.ExceptionFilter.OnExceptionAsync(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            Método disparado quando a api estoura uma exceção
+            </summary>
+            <param name="context">Contexto da exceção</param>
+            <returns>Resposta http</returns>
+        </member>
+        <member name="M:WebApi.Filter.ExceptionFilter.WriteLog(System.Exception)">
+            <summary>
+            Método para escrever log utilizando o logger customizado
+            </summary>
+            <param name="ex">Exceção</param>
+        </member>
+        <member name="M:WebApi.Filter.ExceptionFilter.NotifyDev">
+            <summary>
+            Efetua notificação do time de desenvolvimento
+            </summary>
+        </member>
+        <member name="T:WebApi.Program">
+            <summary>
+            Classe de entrada da aplicação net core
+            </summary>
+        </member>
+        <member name="M:WebApi.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Construção de host para iis
+            </summary>
+            <param name="args">Argumentos externos</param>
+            <returns>Host builder</returns>
+        </member>
+        <member name="M:WebApi.Program.Main(System.String[])">
+            <summary>
+            Método de entrada da aplicação net core
+            O aspnet core utiliza de construção similar ao modelo de aplicações como console application ou windows services para que possa rodar como serviço auto gerenciado
+            </summary>
+            <param name="args">Argumentos externos</param>
+        </member>
+        <member name="T:WebApi.Startup">
+            <summary>
+            Classe de inicialização da api
+            </summary>
+        </member>
+        <member name="M:WebApi.Startup.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Construtor de ambiente
+            </summary>
+            <param name="env">Ambiente</param>
+        </member>
+        <member name="P:WebApi.Startup.AutofacContainer">
+            <summary>
+            Container Autofac
+            </summary>
+        </member>
+        <member name="P:WebApi.Startup.Settings">
+            <summary>
+            Objeto de configurações
+            </summary>
+        </member>
+        <member name="P:WebApi.Startup.Configuration">
+            <summary>
+            Serviço para acesso de configurações appsettings.json
+            </summary>
+        </member>
+        <member name="P:WebApi.Startup.HttpContextAccessor">
+            <summary>
+            Acessador de contexto
+            </summary>
+        </member>
+        <member name="M:WebApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Método para configurar aplicação
+            </summary>
+            <param name="app">Serviço de construtor da aplicação</param>
+            <param name="env">Serviço de ambiente da aplicação</param>
+        </member>
+        <member name="M:WebApi.Startup.ConfigureContainer(Autofac.ContainerBuilder)">
+            <summary>
+            Chamada da implementação para configurar container (chamada efetuada pelo módulo Module.Ioc)
+            </summary>
+            <param name="builder">Container builder autofac</param>
+        </member>
+        <member name="M:WebApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Método para registrar serviços .net core
+            </summary>
+            <param name="services">Registrador de serviços</param>
+        </member>
+        <member name="M:WebApi.Startup.OnActivatingInstance``1(Autofac.Core.IActivatingEventArgs{``0})">
+            <summary>
+            Método para ações customizadas ao ativar um tipo já cadastrado na injeção de dependencia (caso necessário)
+            </summary>
+            <typeparam name="TypeOf">Tipo</typeparam>
+            <param name="e">Tipo que está sendo instanciado</param>
+        </member>
+        <member name="M:WebApi.Startup.RegisterInternalComponents(Autofac.ContainerBuilder)">
+            <summary>
+            Registro de controllers
+            </summary>
+            <param name="builder">Container builder autofac</param>
+        </member>
+        <member name="M:WebApi.Startup.RegisterSettings">
+            <summary>
+            Registro das configurações do sistema
+            </summary>
+        </member>
+        <member name="M:WebApi.Startup.ConfigureAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configuração da autoridade de autenticação
+            </summary>
+            <param name="services">Service Collection .Net Core</param>
+        </member>
+    </members>
+</doc>
