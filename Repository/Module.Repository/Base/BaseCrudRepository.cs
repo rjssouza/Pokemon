@@ -35,9 +35,9 @@ namespace Module.Repository.Base
         /// </summary>
         /// <param name="entity">Modelo informado</param>
         /// <returns>Resultado da ação</returns>
-        public virtual Guid Insert(TModel entity)
+        public virtual Type Insert<Type>(TModel entity)
         {
-            return this._dbService.DbConnection.Insert<Guid, TModel>(entity, transaction: this._dbService.Transaction);
+            return this._dbService.DbConnection.Insert<Type, TModel>(entity, transaction: this._dbService.Transaction);
         }
 
         /// <summary>

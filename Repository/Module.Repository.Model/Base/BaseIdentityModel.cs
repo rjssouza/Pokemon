@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Dapper.Contrib.Extensions;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Module.Repository.Model.Base
@@ -11,8 +12,9 @@ namespace Module.Repository.Model.Base
         /// <summary>
         /// Identificador da tabela
         /// </summary>
-        [Key]
+        [System.ComponentModel.DataAnnotations.Key]
         [Column("id")]
+        [ExplicitKey]
         public IdType Id { get; set; }
     }
 }

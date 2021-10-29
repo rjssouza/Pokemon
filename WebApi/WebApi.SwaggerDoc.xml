@@ -48,6 +48,31 @@
             </summary>
             <returns>Informações do pokemon</returns>
         </member>
+        <member name="T:WebApi.Controller.TrainerController">
+            <summary>
+            Classe para obter pokemon
+            </summary>
+        </member>
+        <member name="P:WebApi.Controller.TrainerController.TrainerService">
+            <summary>
+            Serviço para obter pokemons e captura-los
+            </summary>
+        </member>
+        <member name="M:WebApi.Controller.TrainerController.Capture(System.Guid,System.String)">
+            <summary>
+            Captura um pokemon
+            </summary>
+            <param name="trainerId">Identificador do treinador </param>
+            <param name="pokemonName">Nome do pokemon</param>
+            <returns>Dados do pokemon capturado</returns>
+        </member>
+        <member name="M:WebApi.Controller.TrainerController.Post(Module.Dto.Trainer.PokemonTrainerDto)">
+            <summary>
+            Registra um treinador na base
+            </summary>
+            <param name="pokemonTrainer">Treinador</param>
+            <returns>Identificador do treinador</returns>
+        </member>
         <member name="T:WebApi.Controller.ValuesController">
             <summary>
             Controller de teste de template 

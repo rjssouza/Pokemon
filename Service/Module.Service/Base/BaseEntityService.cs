@@ -45,14 +45,13 @@ namespace Module.Service.Base
         /// Insere os dados da entidade efetuando as validaões necessarias
         /// </summary>
         /// <param name="dtoObject">Objeto dto </param>
-        public virtual Guid Insert(TDto dtoObject)
+        public virtual TKeyType Insert(TDto dtoObject)
         {
-            dtoObject.Id = Guid.NewGuid();
             var model = this.ObjectConverterFactory.ConvertTo<TModel>(dtoObject);
             this.ValidateInsert(model);
 
             this.OpenTransaction();
-            var result = this.CrudRepository.Insert(model);
+            var result = this.CrudRepository.Insert<TKeyType>(model);
 
             this.Commit();
 

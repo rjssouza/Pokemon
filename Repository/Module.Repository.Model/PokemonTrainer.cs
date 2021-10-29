@@ -1,10 +1,11 @@
 ﻿using Module.Repository.Model.Base;
+using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Module.Repository.Model
 {
     [Table("PokemonTrainer")]
-    public class PokemonTrainer : BaseIdentityModel<int>
+    public class PokemonTrainer : BaseIdentityModel<Guid>
     {
         [Column("age")]
         public int Age { get; set; }

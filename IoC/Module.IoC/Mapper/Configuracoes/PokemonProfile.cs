@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Module.Dto.Trainer;
+using Module.Repository.Model;
 
 namespace Module.IoC.Mapper.Configuracoes
 {
@@ -6,6 +8,8 @@ namespace Module.IoC.Mapper.Configuracoes
     {
         public PokemonProfile()
         {
+            CreateMap<PokemonTrainerDto, PokemonTrainer>()
+                .ReverseMap();
         }
     }
 }

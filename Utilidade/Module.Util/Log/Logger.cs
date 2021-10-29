@@ -47,7 +47,7 @@ namespace Module.Util.Log
         /// <param name="ex">Exceção disparada pelo sistema</param>
         public void Write(Exception ex)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

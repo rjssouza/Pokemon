@@ -9,6 +9,11 @@
             Classe base para data transfer object
             </summary>
         </member>
+        <member name="M:Module.Dto.Base.BaseDto.#ctor">
+            <summary>
+            Construtor padrão
+            </summary>
+        </member>
         <member name="P:Module.Dto.Base.BaseDto.Id">
             <summary>
             Identificador da entidade
@@ -125,6 +130,41 @@
             Chave de segurança autenticação
             </summary>
         </member>
+        <member name="T:Module.Dto.Pokemon.AbilityDto">
+            <summary>
+            Dados habilidade do pokemon
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Pokemon.AbilityDto.IsHidden">
+            <summary>
+            Indica se e oculta
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Pokemon.AbilityDto.Name">
+            <summary>
+            Nome
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Pokemon.AbilityDto.Url">
+            <summary>
+            Url
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Pokemon.FormsDto">
+            <summary>
+            Transformação do pokemon
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Pokemon.FormsDto.Name">
+            <summary>
+            Nome
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Pokemon.FormsDto.Url">
+            <summary>
+            Url
+            </summary>
+        </member>
         <member name="T:Module.Dto.Pokemon.PokemonBasicInfoDto">
             <summary>
             Informação basica pokemon
@@ -140,6 +180,41 @@
             Dados do pokemon
             </summary>
         </member>
+        <member name="P:Module.Dto.Pokemon.PokemonDto.AbilityList">
+            <summary>
+            Lista habilidades
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Pokemon.PokemonDto.ExperienceBase">
+            <summary>
+            Experiencia
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Pokemon.PokemonDto.Forms">
+            <summary>
+            Evoluções do pokemon
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Pokemon.PokemonDto.Height">
+            <summary>
+            Peso
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Pokemon.PokemonDto.Id">
+            <summary>
+            Identificador
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Pokemon.PokemonDto.SpriteDefault">
+            <summary>
+            Sprite default frente e verso
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Pokemon.PokemonDto.Weight">
+            <summary>
+            Peso
+            </summary>
+        </member>
         <member name="T:Module.Dto.Pokemon.SpriteDto">
             <summary>
             Informações de sprite default do pokemon
@@ -153,6 +228,26 @@
         <member name="P:Module.Dto.Pokemon.SpriteDto.FrontDefault">
             <summary>
             Foto front
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Trainer.PokemonTrainerDto">
+            <summary>
+            Dados do treinador
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Trainer.PokemonTrainerDto.Age">
+            <summary>
+            Idade
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Trainer.PokemonTrainerDto.Cpf">
+            <summary>
+            Cpf
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Trainer.PokemonTrainerDto.Name">
+            <summary>
+            Nome
             </summary>
         </member>
         <member name="T:Module.Dto.Validation.Api.ApiException">

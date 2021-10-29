@@ -104,14 +104,14 @@ namespace Module.Factory.Conexao
         private static void CreateCaptureTable(SQLiteConnection tempConnection)
         {
             using var createCaptureTable = tempConnection.CreateCommand();
-            createCaptureTable.CommandText = "CREATE TABLE IF NOT EXISTS PokemonCapture(id int not null primary key, pokemon_id int, pokemon_name varchar(50), treinador_id int)";
+            createCaptureTable.CommandText = "CREATE TABLE IF NOT EXISTS PokemonCapture(id text primary key, pokemon_id int, pokemon_name varchar(50), treinador_id text)";
             createCaptureTable.ExecuteNonQuery();
         }
 
         private static void CreateTrainerTable(SQLiteConnection tempConnection)
         {
             using var createTableCmd = tempConnection.CreateCommand();
-            createTableCmd.CommandText = "CREATE TABLE IF NOT EXISTS PokemonTrainer(id int not null primary key, name Varchar(50), cpf VarChar(11), age int)";
+            createTableCmd.CommandText = "CREATE TABLE IF NOT EXISTS PokemonTrainer(id text primary key, name Varchar(50), cpf VarChar(11), age int)";
             createTableCmd.ExecuteNonQuery();
         }
 

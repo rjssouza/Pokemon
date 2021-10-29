@@ -10,7 +10,7 @@ namespace Module.Service.Interface.Base
         /// Insere os dados da entidade efetuando as validaões necessarias
         /// </summary>
         /// <param name="dtoObject">Objeto dto </param>
-        Guid Insert(TDto dtoObject);
+        TKeyType Insert(TDto dtoObject);
 
         /// <summary>
         /// Atualiza as informações da entidade efetuando as validações necessarias
