@@ -1,5 +1,4 @@
 ﻿using Module.Repository.Model.Base;
-using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Module.Repository.Model
@@ -15,5 +14,8 @@ namespace Module.Repository.Model
 
         [Column("trainer_cpf")]
         public string TrainerCpf { get; set; }
+
+        [Column("trainer_name")]
+        public string TrainerName { get; set; }
     }
 }

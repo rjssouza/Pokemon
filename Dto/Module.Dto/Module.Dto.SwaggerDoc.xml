@@ -150,6 +150,16 @@
             Url
             </summary>
         </member>
+        <member name="T:Module.Dto.Pokemon.CapturedPokemonDto">
+            <summary>
+            Dados pokemon capturado
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Pokemon.CapturedPokemonDto.TrainerName">
+            <summary>
+            Nome treinador
+            </summary>
+        </member>
         <member name="T:Module.Dto.Pokemon.FormsDto">
             <summary>
             Transformação do pokemon

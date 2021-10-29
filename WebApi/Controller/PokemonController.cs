@@ -46,5 +46,17 @@ namespace WebApi.Controller
             return Ok(result);
         }
 
+        /// <summary>
+        /// Obtem uma lista de todos os pokemons capturados
+        /// </summary>
+        /// <returns>Informações do pokemon</returns>
+        [HttpGet("captured")]
+        [ProducesResponseType(200, Type = typeof(List<CapturedPokemonDto>))]
+        public IActionResult GetCaptured()
+        {
+            var result = this.PokemonService.GetCapturedPokemonList();
+
+            return Ok(result);
+        }
     }
 }

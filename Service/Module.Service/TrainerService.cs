@@ -23,12 +23,14 @@ namespace Module.Service
             this.CrudValidation.CanCapture(cpf, pokemonName);
 
             var pokemon = this.PokemonService.GetPokemon(pokemonName);
+            var trainer = this.GetByCpf(cpf);
 
             var pokemonCapture = new PokemonCapture()
             {
                 PokemonId = pokemon.Id,
                 PokemonName = pokemonName,
-                TrainerCpf = cpf
+                TrainerCpf = cpf,
+                TrainerName = trainer.Name
             };
 
             this.PokemonCaptureRepository.Insert<string>(pokemonCapture);

@@ -48,6 +48,12 @@
             </summary>
             <returns>Informações do pokemon</returns>
         </member>
+        <member name="M:WebApi.Controller.PokemonController.GetCaptured">
+            <summary>
+            Obtem uma lista de todos os pokemons capturados
+            </summary>
+            <returns>Informações do pokemon</returns>
+        </member>
         <member name="T:WebApi.Controller.TrainerController">
             <summary>
             Classe para obter pokemon

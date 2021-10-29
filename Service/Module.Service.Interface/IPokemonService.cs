@@ -9,5 +9,7 @@ namespace Module.Service.Interface
         PokemonDto GetPokemon(string pokemonName);
 
         List<PokemonBasicInfoDto> GetPokemonList();
+
+        List<CapturedPokemonDto> GetCapturedPokemonList();
     }
 }

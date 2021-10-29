@@ -104,7 +104,7 @@ namespace Module.Factory.Conexao
         private static void CreateCaptureTable(SQLiteConnection tempConnection)
         {
             using var createCaptureTable = tempConnection.CreateCommand();
-            createCaptureTable.CommandText = "CREATE TABLE IF NOT EXISTS PokemonCapture(id text primary key, pokemon_id int, pokemon_name varchar(50), trainer_cpf varchar(11))";
+            createCaptureTable.CommandText = "CREATE TABLE IF NOT EXISTS PokemonCapture(id text primary key, pokemon_id int, pokemon_name varchar(50), trainer_cpf varchar(11), trainer_name varchar(50))";
             createCaptureTable.ExecuteNonQuery();
         }
 
