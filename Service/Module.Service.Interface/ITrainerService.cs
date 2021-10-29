@@ -7,6 +7,7 @@ namespace Module.Service.Interface
 {
     public interface ITrainerService : IBaseEntityService<PokemonTrainerDto, string>
     {
-        PokemonDto Capture(string trainerId, string pokemonName);
+        PokemonDto Capture(string cpf, string pokemonName);
+        PokemonTrainerDto GetByCpf(string cpf);
     }
 }

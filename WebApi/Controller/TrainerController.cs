@@ -24,14 +24,14 @@ namespace WebApi.Controller
         /// <summary>
         /// Captura um pokemon
         /// </summary>
-        /// <param name="trainerId">Identificador do treinador </param>
+        /// <param name="cpf">Identificador do treinador </param>
         /// <param name="pokemonName">Nome do pokemon</param>
         /// <returns>Dados do pokemon capturado</returns>
-        [HttpGet("capture/{trainerId}/{pokemonName}")]
+        [HttpGet("capture/{cpf}/{pokemonName}")]
         [ProducesResponseType(200, Type = typeof(PokemonDto))]
-        public IActionResult Capture(string trainerId, string pokemonName)
+        public IActionResult Capture(string cpf, string pokemonName)
         {
-            var result = this.TrainerService.Capture(trainerId, pokemonName);
+            var result = this.TrainerService.Capture(cpf, pokemonName);
 
             return Ok(result);
         }

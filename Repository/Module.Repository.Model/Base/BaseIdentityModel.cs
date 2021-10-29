@@ -14,7 +14,6 @@ namespace Module.Repository.Model.Base
         /// </summary>
         [System.ComponentModel.DataAnnotations.Key]
         [Column("id")]
-        [ExplicitKey]
         public IdType Id { get; set; }
     }
 }

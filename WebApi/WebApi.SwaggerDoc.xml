@@ -62,7 +62,7 @@
             <summary>
             Captura um pokemon
             </summary>
-            <param name="trainerId">Identificador do treinador </param>
+            <param name="cpf">Identificador do treinador </param>
             <param name="pokemonName">Nome do pokemon</param>
             <returns>Dados do pokemon capturado</returns>
         </member>

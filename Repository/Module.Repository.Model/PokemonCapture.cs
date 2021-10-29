@@ -13,7 +13,7 @@ namespace Module.Repository.Model
         [Column("pokemon_name")]
         public string PokemonName { get; set; }
 
-        [Column("trainer_id")]
-        public string TrainerId { get; set; }
+        [Column("trainer_cpf")]
+        public string TrainerCpf { get; set; }
     }
 }
