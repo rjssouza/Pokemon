@@ -35,8 +35,4 @@
     <ProjectReference Include="..\Module.IoC.Interface\Module.IoC.Interface.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Mapper\Configuracoes\" />
-  </ItemGroup>
-
 </Project>

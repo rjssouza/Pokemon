@@ -1,4 +1,5 @@
 ﻿using Module.Dto.Base;
+using System.Collections.Generic;
 
 namespace Module.Dto.Config
 {
@@ -10,7 +11,7 @@ namespace Module.Dto.Config
         /// <summary>
         /// Endereços de api de integração externa
         /// </summary>
-        public ExternalApiSettingsDto ApiServicesUrl { get; set; }
+        public List<ExternalApiSettingsDto> ApiServicesUrl { get; set; }
 
         /// <summary>
         /// Conexões com banco de dados
@@ -21,5 +22,6 @@ namespace Module.Dto.Config
         /// Chave de segurança autenticação
         /// </summary>
         public string SecureKey { get; set; }
+        public string WebRootPath { get; set; }
     }
 }

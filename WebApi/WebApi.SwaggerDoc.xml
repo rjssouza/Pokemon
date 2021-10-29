@@ -4,6 +4,18 @@
         <name>WebApi</name>
     </assembly>
     <members>
+        <member name="T:WebApi.Attribute.CustomHeaderSwaggerAttribute">
+            <summary>
+            Atributo global para selecionar header swagger
+            </summary>
+        </member>
+        <member name="M:WebApi.Attribute.CustomHeaderSwaggerAttribute.Apply(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            Método invocado ao efetuar inclusão do swagger
+            </summary>
+            <param name="operation">Operação</param>
+            <param name="context">Contexto</param>
+        </member>
         <member name="T:WebApi.Base.ServiceController">
             <summary>
             Classe base para Controller
@@ -13,6 +25,28 @@
             <summary>
             Objeto de configurações (registrado no início da aplicação)
             </summary>
+        </member>
+        <member name="T:WebApi.Controller.PokemonController">
+            <summary>
+            Classe para obter pokemon
+            </summary>
+        </member>
+        <member name="P:WebApi.Controller.PokemonController.PokemonService">
+            <summary>
+            Serviço para obter pokemons e captura-los
+            </summary>
+        </member>
+        <member name="M:WebApi.Controller.PokemonController.Get">
+            <summary>
+            Obtem uma lista com 10 pokemons aleatorios
+            </summary>
+            <returns>Informações do pokemon</returns>
+        </member>
+        <member name="M:WebApi.Controller.PokemonController.Get(System.String)">
+            <summary>
+            Obtem uma lista com 10 pokemons aleatorios
+            </summary>
+            <returns>Informações do pokemon</returns>
         </member>
         <member name="T:WebApi.Controller.ValuesController">
             <summary>
@@ -150,16 +184,10 @@
             </summary>
             <param name="builder">Container builder autofac</param>
         </member>
-        <member name="M:WebApi.Startup.RegisterSettings">
+        <member name="M:WebApi.Startup.RegisterSettings(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>
             Registro das configurações do sistema
             </summary>
-        </member>
-        <member name="M:WebApi.Startup.ConfigureAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
-            <summary>
-            Configuração da autoridade de autenticação
-            </summary>
-            <param name="services">Service Collection .Net Core</param>
         </member>
     </members>
 </doc>

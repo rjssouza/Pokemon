@@ -27,9 +27,16 @@ namespace Module.Util.Extensao
         /// <returns>MimeType da imagem</returns>
         public static string ObterMimeType(this byte[] file)
         {
-            FileType fileType = file.GetFileType();
+            try
+            {
+                FileType fileType = file.GetFileType();
 
-            return fileType.Mime;
+                return fileType.Mime;
+            }
+            catch (Exception)
+            {
+                return "PNG";
+            }
         }
 
         /// <summary>

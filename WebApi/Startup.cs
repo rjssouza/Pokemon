@@ -14,7 +14,10 @@ using Module.IoC.Interface;
 using Module.IoC.Register;
 using Module.Util.Json;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using WebApi.Attribute;
@@ -29,6 +32,7 @@ namespace WebApi
     public class Startup : IControllerRegister
     {
         private SettingsDto _settings;
+        private IWebHostEnvironment _env;
 
         /// <summary>
         /// Construtor de ambiente
@@ -36,6 +40,7 @@ namespace WebApi
         /// <param name="env">Ambiente</param>
         public Startup(IWebHostEnvironment env)
         {
+            _env = env;
 #if DEBUG
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
@@ -99,9 +104,6 @@ namespace WebApi
                .AllowAnyHeader()
                .SetIsOriginAllowed(origin => true) // allow any origin
                .AllowCredentials()); // allow credentials
-
-            //app.UseAuthentication();
-            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
@@ -184,9 +186,7 @@ namespace WebApi
                 }
             });
 
-            this.RegisterSettings();
-
-            ConfigureAuthentication(services);
+            this.RegisterSettings(services);
         }
 
         /// <summary>
@@ -211,48 +211,13 @@ namespace WebApi
         /// <summary>
         /// Registro das configurações do sistema
         /// </summary>
-        private void RegisterSettings()
+        private void RegisterSettings(IServiceCollection services)
         {
-            var externalServicesApiUrl = this.Configuration.GetSection("ApiServicesUrl");
-            var dbConnection = this.Configuration.GetSection("DbConnection");
-
-            this._settings = new SettingsDto()
-            {
-                ApiServicesUrl = new ExternalApiSettingsDto()
-                {
-                    ViaCepApiUrl = externalServicesApiUrl.GetValue<string>("ViaCepApiUrl")
-                },
-                DbConnection = new DbSettingsDto()
-                {
-                    Default = dbConnection.GetValue<string>("Default")
-                }
-            };
-        }
-
-        /// <summary>
-        /// Configuração da autoridade de autenticação
-        /// </summary>
-        /// <param name="services">Service Collection .Net Core</param>
-        private void ConfigureAuthentication(IServiceCollection services)
-        {
-            var key = Encoding.ASCII.GetBytes(this.Settings.SecureKey);
-
-            services.AddAuthentication(x =>
-            {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(x =>
-            {
-                x.RequireHttpsMetadata = false;
-                x.SaveToken = true;
-                x.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(key),
-                    ValidateIssuer = false,
-                    ValidateAudience = false
-                };
-            });
+            var settings = new SettingsDto();
+            this.Configuration.Bind(settings);
+            settings.WebRootPath = _env.ContentRootPath;
+            
+            this._settings = settings;
         }
     }
 }

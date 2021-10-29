@@ -8,6 +8,7 @@ using Module.Dto.Config;
 using Module.IoC.Interface;
 using Module.IoC.Register;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace UnitTest.Base
@@ -55,9 +56,7 @@ namespace UnitTest.Base
             DbConnection = new DbSettingsDto()
             {
             },
-            ApiServicesUrl = new ExternalApiSettingsDto()
-            {
-            }
+            ApiServicesUrl = new List<ExternalApiSettingsDto>()
         };
 
         /// <summary>

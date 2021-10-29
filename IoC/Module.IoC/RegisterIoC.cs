@@ -147,10 +147,12 @@ namespace Module.IoC
             builder.RegisterType<DbConnectionFactory>()
                 .As<IDbTransactionFactory>()
                 .As<IDbConnectionFactory>()
-                .UsingConstructor(typeof(string))
+                .UsingConstructor(typeof(string), typeof(string))
                 .InstancePerLifetimeScope()
+                .PropertiesAutowired(PropertyWiringOptions.AllowCircularDependencies)
                 .WithParameters(new[] {
-                    new NamedParameter("connectionString", conexaoDto.Default)
+                    new NamedParameter("sqliteDirectory", conexaoDto.Default),
+                    new NamedParameter("rootPath", registro.Settings.WebRootPath)
                 });
 
             builder.RegisterAssemblyTypes(Assembly.Load(typeof(BaseRepository).Assembly.GetName()))

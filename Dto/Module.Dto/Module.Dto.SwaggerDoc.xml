@@ -105,14 +105,14 @@
             Endereços de api de integração externa
             </summary>
         </member>
-        <member name="P:Module.Dto.Config.ExternalApiSettingsDto.ViaCepApiUrl">
-            <summary>
-            Endereço de api dos serviços de via cep https://viacep.com.br/
-            </summary>
-        </member>
         <member name="T:Module.Dto.Config.SettingsDto">
             <summary>
             Objeto de configurações do sistema (acessado por todas as camadas)
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Config.SettingsDto.ApiServicesUrl">
+            <summary>
+            Endereços de api de integração externa
             </summary>
         </member>
         <member name="P:Module.Dto.Config.SettingsDto.DbConnection">
@@ -120,9 +120,39 @@
             Conexões com banco de dados
             </summary>
         </member>
-        <member name="P:Module.Dto.Config.SettingsDto.ApiServicesUrl">
+        <member name="P:Module.Dto.Config.SettingsDto.SecureKey">
             <summary>
-            Endereços de api de integração externa
+            Chave de segurança autenticação
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Pokemon.PokemonBasicInfoDto">
+            <summary>
+            Informação basica pokemon
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Pokemon.PokemonBasicInfoDto.Name">
+            <summary>
+            Nome do pokemon
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Pokemon.PokemonDto">
+            <summary>
+            Dados do pokemon
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Pokemon.SpriteDto">
+            <summary>
+            Informações de sprite default do pokemon
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Pokemon.SpriteDto.BackDefault">
+            <summary>
+            Foto back
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Pokemon.SpriteDto.FrontDefault">
+            <summary>
+            Foto front
             </summary>
         </member>
         <member name="T:Module.Dto.Validation.Api.ApiException">

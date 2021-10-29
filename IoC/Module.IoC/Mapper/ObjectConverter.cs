@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Module.Factory.Interface;
+using Module.IoC.Mapper.Configuracoes;
 
 namespace Module.IoC.Mapper
 {
@@ -46,6 +47,7 @@ namespace Module.IoC.Mapper
         /// <param name="mapperConfigExpression"></param>
         private void ConfigureMapper(IMapperConfigurationExpression mapperConfigExpression)
         {
+            mapperConfigExpression.AddProfile(new PokemonProfile());
         }
 
         /// <summary>

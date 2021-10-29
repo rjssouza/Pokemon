@@ -3,6 +3,8 @@ using Module.Dto.Validation.Api;
 using Module.Integration.Interface.Base;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -16,9 +18,9 @@ namespace Module.Integration.Base
     /// </summary>
     public abstract class BaseIntegration : IBaseIntegration
     {
-        private HttpClient _httpClient;
+        protected HttpClient _httpClient;
         private bool disposedValue;
-
+        public List<ExternalApiSettingsDto> TEst { get; set; }
         ~BaseIntegration()
         {
             // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
@@ -43,7 +45,16 @@ namespace Module.Integration.Base
         /// <summary>
         /// Endereço api da integração
         /// </summary>
-        protected abstract string ApiAddress { get; }
+        protected virtual string ApiAddress
+        {
+            get
+            {
+                var apiAddresss = this.Settings.ApiServicesUrl.Where(t => t.Name == this.Name)
+                    .FirstOrDefault();
+
+                return apiAddresss.Url;
+            } 
+        }
 
         /// <summary>
         /// Nome da integração
