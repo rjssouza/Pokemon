@@ -11,7 +11,7 @@ namespace Module.Service.Validation
         public IPokemonService PokemonService { get; set; }
         public ITrainerService TrainerService { get; set; }
 
-        public void CanCapture(Guid trainerId, string pokemonName)
+        public void CanCapture(string trainerId, string pokemonName)
         {
             var pokemon = this.PokemonService.GetPokemon(pokemonName);
             if (pokemon == null)

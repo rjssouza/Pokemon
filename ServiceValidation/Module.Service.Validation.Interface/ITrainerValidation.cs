@@ -6,6 +6,6 @@ namespace Module.Service.Validation.Interface
 {
     public interface ITrainerValidation : IBaseCrudValidation<PokemonTrainer>
     {
-        void CanCapture(Guid trainerId, string pokemonName);
+        void CanCapture(string trainerId, string pokemonName);
     }
 }

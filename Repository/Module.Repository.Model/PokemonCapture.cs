@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Module.Repository.Model
 {
     [Table("PokemonCapture")]
-    public class PokemonCapture : BaseIdentityModel<Guid>
+    public class PokemonCapture : BaseIdentityModel<string>
     {
         [Column("pokemon_id")]
         public int PokemonId { get; set; }
@@ -14,6 +14,6 @@ namespace Module.Repository.Model
         public string PokemonName { get; set; }
 
         [Column("trainer_id")]
-        public Guid TrainerId { get; set; }
+        public string TrainerId { get; set; }
     }
 }

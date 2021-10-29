@@ -29,7 +29,7 @@ namespace WebApi.Controller
         /// <returns>Dados do pokemon capturado</returns>
         [HttpGet("capture/{trainerId}/{pokemonName}")]
         [ProducesResponseType(200, Type = typeof(PokemonDto))]
-        public IActionResult Capture(Guid trainerId, string pokemonName)
+        public IActionResult Capture(string trainerId, string pokemonName)
         {
             var result = this.TrainerService.Capture(trainerId, pokemonName);
 
@@ -42,7 +42,7 @@ namespace WebApi.Controller
         /// <param name="pokemonTrainer">Treinador</param>
         /// <returns>Identificador do treinador</returns>
         [HttpPost]
-        [ProducesResponseType(200, Type = typeof(Guid))]
+        [ProducesResponseType(200, Type = typeof(string))]
         public IActionResult Post(PokemonTrainerDto pokemonTrainer)
         {
             var result = this.TrainerService.Insert(pokemonTrainer);

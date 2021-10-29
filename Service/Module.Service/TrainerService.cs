@@ -9,7 +9,7 @@ using System;
 
 namespace Module.Service
 {
-    public class TrainerService : BaseEntityService<PokemonTrainer, PokemonTrainerDto, Guid, ITrainerRepository, ITrainerValidation>, ITrainerService
+    public class TrainerService : BaseEntityService<PokemonTrainer, PokemonTrainerDto, string, ITrainerRepository, ITrainerValidation>, ITrainerService
     {
         public override ITrainerRepository CrudRepository { get; set; }
         public override ITrainerValidation CrudValidation { get; set; }
@@ -17,7 +17,7 @@ namespace Module.Service
         public IPokemonCaptureRepository PokemonCaptureRepository { get; set; }
         public IPokemonService PokemonService { get; set; }
 
-        public PokemonDto Capture(Guid trainerId, string pokemonName)
+        public PokemonDto Capture(string trainerId, string pokemonName)
         {
             this.CrudValidation.CanCapture(trainerId, pokemonName);
 
@@ -30,7 +30,7 @@ namespace Module.Service
                 TrainerId = trainerId
             };
 
-            this.PokemonCaptureRepository.Insert<Guid>(pokemonCapture);
+            this.PokemonCaptureRepository.Insert<string>(pokemonCapture);
 
             return pokemon;
         }

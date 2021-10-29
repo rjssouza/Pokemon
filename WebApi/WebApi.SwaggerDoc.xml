@@ -58,7 +58,7 @@
             Serviço para obter pokemons e captura-los
             </summary>
         </member>
-        <member name="M:WebApi.Controller.TrainerController.Capture(System.Guid,System.String)">
+        <member name="M:WebApi.Controller.TrainerController.Capture(System.String,System.String)">
             <summary>
             Captura um pokemon
             </summary>

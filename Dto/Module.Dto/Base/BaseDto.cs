@@ -13,12 +13,12 @@ namespace Module.Dto.Base
         /// </summary>
         public BaseDto()
         {
-            Id = Guid.NewGuid();
+            Id = Guid.NewGuid().ToString();
         }
 
         /// <summary>
         /// Identificador da entidade
         /// </summary>
-        public Guid Id { get; set; }
+        public string Id { get; set; }
     }
 }

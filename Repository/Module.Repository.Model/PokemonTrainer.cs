@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Module.Repository.Model
 {
     [Table("PokemonTrainer")]
-    public class PokemonTrainer : BaseIdentityModel<Guid>
+    public class PokemonTrainer : BaseIdentityModel<string>
     {
         [Column("age")]
         public int Age { get; set; }

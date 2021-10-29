@@ -5,8 +5,8 @@ using System;
 
 namespace Module.Service.Interface
 {
-    public interface ITrainerService : IBaseEntityService<PokemonTrainerDto, Guid>
+    public interface ITrainerService : IBaseEntityService<PokemonTrainerDto, string>
     {
-        PokemonDto Capture(Guid trainerId, string pokemonName);
+        PokemonDto Capture(string trainerId, string pokemonName);
     }
 }
